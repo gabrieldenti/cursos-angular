@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
+import { FormsModule } from '@angular/forms';
+import { ListarPensamentoComponent } from './componentes/listar-pensamento/listar-pensamento.component';
+import { PensamentosPensamentoComponent } from './componentes/pensamentos-pensamento/pensamentos-pensamento.component';
 
 @NgModule({
-  declarations: [AppComponent, CabecalhoComponent, RodapeComponent, CriarPensamentoComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, CabecalhoComponent, RodapeComponent, CriarPensamentoComponent, ListarPensamentoComponent, PensamentosPensamentoComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
