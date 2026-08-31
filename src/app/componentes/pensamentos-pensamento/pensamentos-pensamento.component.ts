@@ -9,9 +9,9 @@ export class PensamentosPensamentoComponent implements OnInit {
 
 
   pensamento = {
-    conteudo:'',
-    autoria:'',
-    modelo: ''
+    conteudo:'sla',
+    autoria:'sla',
+    modelo: 'modelo1'
   }
 
   constructor(){
