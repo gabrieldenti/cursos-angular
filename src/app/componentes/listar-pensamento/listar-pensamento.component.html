@@ -5,8 +5,9 @@
     </header>
     <div class="mural">
         <div>
-            @for (pensamentos of listaPensamentos; track pensamentos) {}
-            <app-pensamentos-pensamento></app-pensamentos-pensamento>
+            @for (pensamentos of listaPensamentos; track pensamentos) {
+            <app-pensamentos-pensamento [pensamento]="pensamentos"></app-pensamentos-pensamento> <!-- property binding de pensamento recebe o (pensamentos)valor de listaPensamentos -->
+            }
         </div>
     </div>
 </section>
