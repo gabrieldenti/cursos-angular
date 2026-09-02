@@ -1,0 +1,58 @@
+{
+  "pensamentos": [
+    {
+      "id": 1,
+      "conteudo": "O que me preocupa não é o grito dos maus. É o silêncio dos bons.",
+      "autoria": "Martin Luther King",
+      "modelo": "modelo1"
+    },
+    {
+      "id": 2,
+      "conteudo": "Penso, logo existo.",
+      "autoria": "René Descartes",
+      "modelo": "modelo2"
+    },
+    {
+      "id": 3,
+      "conteudo": "A simplicidade é o último grau de sofisticação.",
+      "autoria": "Leonardo da Vinci",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 4,
+      "conteudo": "Aprender Angular com a nova sintaxe de Control Flow torna o desenvolvimento muito mais limpo, eficiente e agradável de manter no dia a dia.",
+      "autoria": "Dev Frontend",
+      "modelo": "modelo1"
+    },
+    {
+      "id": 5,
+      "conteudo": "Se vi mais longe foi por estar de pé sobre ombros de gigantes.",
+      "autoria": "Isaac Newton",
+      "modelo": "modelo2"
+    },
+    {
+      "id": 6,
+      "conteudo": "A persistência é o caminho do êxito. Cada erro no código é apenas um degrau no aprendizado para criar sistemas mais robustos.",
+      "autoria": "Charles Chaplin",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 7,
+      "conteudo": "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado.",
+      "autoria": "Roberto Shinyashiki",
+      "modelo": "modelo1"
+    },
+    {
+      "id": 8,
+      "conteudo": "Este é um texto de teste desenvolvido para preencher exatamente duzentos e cinquenta e seis caracteres no campo de conteúdo. O objetivo é validar o comportamento da interface quando um pensamento atinge o limite máximo de tamanho de tela estabelecido.",
+      "autoria": "Test Suite",
+      "modelo": "modelo2"
+    },
+    {
+      "conteudo": "sla",
+      "autoria": "oi",
+      "modelo": "modelo3",
+      "id": 9
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<section class="container">
+    <header class="header d-flex">
+        <h2 class="ff-inter">Meu Mural</h2>
+        <button routerLink="/criarPensamento" class="botao">Adicionar Pensamento</button> <!-- routerLink é uma diretiva do Angular que permite criar links para outras rotas dentro da aplicação -->
+    </header>
+    @if(listaPensamentos.length > 0){
+        <div class="mural">
+            @for(pensamentos of listaPensamentos; track pensamentos) {
+                <app-pensamento [pensamento]="pensamentos"></app-pensamento> <!-- property binding de pensamento recebe o (pensamentos)valor de listaPensamentos -->
+            }
+        </div>
+    }
+    @else {
+        <div class="ff-inter sem-pensamentos">
+            <p>Ainda não há pensamentos para exibir!</p>
+        </div>
+    }
+</section>
