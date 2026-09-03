@@ -13,12 +13,6 @@
       "modelo": "modelo2"
     },
     {
-      "id": 3,
-      "conteudo": "A simplicidade é o último grau de sofisticação.",
-      "autoria": "Leonardo da Vinci",
-      "modelo": "modelo3"
-    },
-    {
       "id": 4,
       "conteudo": "Aprender Angular com a nova sintaxe de Control Flow torna o desenvolvimento muito mais limpo, eficiente e agradável de manter no dia a dia.",
       "autoria": "Dev Frontend",
@@ -47,12 +41,6 @@
       "conteudo": "Este é um texto de teste desenvolvido para preencher exatamente duzentos e cinquenta e seis caracteres no campo de conteúdo. O objetivo é validar o comportamento da interface quando um pensamento atinge o limite máximo de tamanho de tela estabelecido.",
       "autoria": "Test Suite",
       "modelo": "modelo2"
-    },
-    {
-      "conteudo": "sla",
-      "autoria": "oi",
-      "modelo": "modelo3",
-      "id": 9
     }
   ]
 }

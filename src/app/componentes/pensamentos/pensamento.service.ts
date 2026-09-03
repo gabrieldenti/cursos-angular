@@ -24,4 +24,15 @@ export class PensamentoService {
     const url = `${this.API_URL}/${id}` //cria a url para o pensamento a ser excluido
     return this.http.delete<Pensamento>(url) //retorna o pensamento excluido do backend
   }
+
+  buscarPensamentoPorId(id: number): Observable<Pensamento>{
+    const url = `${this.API_URL}/${id}`
+    return this.http.get<Pensamento>(url);
+  }
+
+  editarPensamento(pensamento: Pensamento): Observable<Pensamento>{
+    const url = `${this.API_URL}/${pensamento.id}`
+    return this.http.put<Pensamento>(url, pensamento)
+
+  }
 }

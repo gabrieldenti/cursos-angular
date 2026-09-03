@@ -1,4 +1,4 @@
-<section class="container criar-pensamentos ff-inter">
+<section class="container editar-pensamentos ff-inter">
   <header class="header">
     <h2>Adicione um <br />pensamento novo:</h2>
   </header>
@@ -25,7 +25,7 @@
     <div class="container-radio">
       <div class="radio-modelo">
         <label>
-          <input type="radio" id="modelo1" value="modelo1" name="modelo-card" [(ngModel)]="pensamento.modelo" />
+          <input type="radio" id="modelo1" value="modelo1" name="modelo-card" [(ngModel)]="pensamento.modelo"  />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -79,7 +79,7 @@
       </div>
     </div>
     <div class="acoes">
-      <button (click)="criarPensamento()" class="botao">Salvar</button>
+      <button (click)="editarPensamento()" class="botao">Editar</button>
       <button (click)="cancelarPensamento()" class="botao">Cancelar</button>
     </div>
   </form>
