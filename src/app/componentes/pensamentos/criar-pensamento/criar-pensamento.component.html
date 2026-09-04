@@ -2,30 +2,34 @@
   <header class="header">
     <h2>Adicione um <br />pensamento novo:</h2>
   </header>
-  <form>
+  <form [formGroup] = "formulario">
     <label for="pensamento">Pensamento</label>
     <textarea
       type="textarea"
       class="textarea"
       id="pensamento"
-      name="pensamento"
+      formControlName="conteudo"
       placeholder="Digite o pensamento"
-      [(ngModel)]="pensamento.conteudo"
+      
     ></textarea>
+    @if(){}
+    <div class="mensagem__erro">
+      Pensamento é obrigatório e deve ter no mínimo 3 caracteres.
+    </div>
     <label for="pensamento">Autoria</label>
     <input
       type="text"
       class="input"
       id="autoria"
-      name="autoria"
+      formControlName="autoria"    
       placeholder="Digite a autoria"
-      [(ngModel)]="pensamento.autoria"
-    />
+      
+    /> <!-- formcontrolname resumindo é uma propriedade do FormGroup que vincula o controle do formulário(input) ao valor correspondente no objeto de formulário(classe) -->
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
         <label>
-          <input type="radio" id="modelo1" value="modelo1" name="modelo-card" [(ngModel)]="pensamento.modelo" />
+          <input type="radio" id="modelo1" value="modelo1" formControlName="modelo"  />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -37,13 +41,13 @@
             src="../../../../assets/imagens/modelo1.png"
             alt="Aspais azuis"
           />
-          <p class="conteudo">{{pensamento.conteudo}}</p>
-          <p class="autoria"><b>{{pensamento.autoria}}</b></p>
+          <p class="conteudo">{{formulario.get('conteudo')!.value}}</p>
+          <p class="autoria"><b>{{formulario.get('autoria')!.value}}</b></p>
         </div>
       </div>
       <div class="radio-modelo">
         <label>
-          <input type="radio" id="modelo2" value="modelo2" name="modelo-card" [(ngModel)]="pensamento.modelo" />
+          <input type="radio" id="modelo2" value="modelo2" formControlName="modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -55,13 +59,13 @@
             src="../../../../assets/imagens/modelo2.png"
             alt="Aspais azul claro"
           />
-          <p class="conteudo">{{pensamento.conteudo}}</p>
-          <p class="autoria"><b>{{pensamento.autoria}}</b></p>
+          <p class="conteudo">{{formulario.get('conteudo')!.value}}</p>
+          <p class="autoria"><b>{{formulario.get('autoria')!.value}}</b></p>
         </div>
       </div>
       <div class="radio-modelo">
         <label>
-          <input type="radio" id="modelo3" value="modelo3" name="modelo-card" [(ngModel)]="pensamento.modelo"/>
+          <input type="radio" id="modelo3" value="modelo3" formControlName="modelo"/>
           <div class="custom-radio">
             <span></span>
           </div>
@@ -73,8 +77,8 @@
             src="../../../../assets/imagens/modelo3.png"
             alt="Aspais azul claro"
           />
-          <p class="conteudo">{{pensamento.conteudo}}</p>
-          <p class="autoria"><b>{{pensamento.autoria}}</b></p>
+          <p class="conteudo">{{formulario.get('conteudo')!.value}}</p>
+          <p class="autoria"><b>{{formulario.get('autoria')!.value}}</b></p>
         </div>
       </div>
     </div>
