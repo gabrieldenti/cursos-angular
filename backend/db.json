@@ -7,12 +7,6 @@
       "modelo": "modelo1"
     },
     {
-      "id": 2,
-      "conteudo": "Penso, logo existo.",
-      "autoria": "René Descartes",
-      "modelo": "modelo2"
-    },
-    {
       "id": 4,
       "conteudo": "Aprender Angular com a nova sintaxe de Control Flow torna o desenvolvimento muito mais limpo, eficiente e agradável de manter no dia a dia.",
       "autoria": "Dev Frontend",

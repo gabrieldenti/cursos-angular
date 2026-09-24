@@ -22,6 +22,7 @@ export class CriarPensamentoComponent implements OnInit{
       autoria: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/(.|\s)*\S(.|\s)*/)]],
       modelo: ['', [Validators.required]]
     })
+    console.log(this.formulario.value);
   }
 
   criarPensamento(){

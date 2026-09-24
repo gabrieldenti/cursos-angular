@@ -13,7 +13,7 @@ export class ListarPensamentoComponent implements OnInit {
   constructor(private pensamentoService: PensamentoService) {}
 
   ngOnInit(): void {
-    this.pensamentoService.listarPensamento().subscribe((listaPensamentos)=>{
+    this.pensamentoService.listarPensamento(1).subscribe((listaPensamentos)=>{
       this.listaPensamentos = listaPensamentos
     })
   } // ngOnInit: ciclo de vida do componente, é chamado quando o componente é inicializado. 

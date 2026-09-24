@@ -12,9 +12,10 @@ import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensam
 import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
 import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
+import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
-  declarations: [AppComponent, CabecalhoComponent, RodapeComponent, CriarPensamentoComponent, ListarPensamentoComponent, PensamentoComponent, ExcluirPensamentoComponent, EditarPensamentoComponent],
+  declarations: [AppComponent, CabecalhoComponent, RodapeComponent, CriarPensamentoComponent, ListarPensamentoComponent, PensamentoComponent, ExcluirPensamentoComponent, EditarPensamentoComponent, BotaoCarregarMaisComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
