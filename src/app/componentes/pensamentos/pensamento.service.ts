@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pensamento } from './pensamento';
 import { Observable } from 'rxjs/internal/Observable';
@@ -12,14 +12,45 @@ export class PensamentoService {
 
   constructor(private http: HttpClient) {} //injetando dependencias e serviços
 
-  listarPensamento(pagina: number): Observable<Pensamento[]> { //Observable é um tipo de objeto que representa uma coleção de valores ou eventos futuros. Ele permite que você se inscreva para receber notificações quando novos valores estiverem disponíveis, facilitando o trabalho com dados assíncronos e fluxos de eventos. No contexto do Angular, os Observables são frequentemente usados para lidar com operações assíncronas, como chamadas HTTP, eventos de interface do usuário e streams de dados em tempo real.
+  listarPensamento(pagina: number, filtro?: string): Observable<Pensamento[]> { //Observable é um tipo de objeto que representa uma coleção de valores ou eventos futuros. Ele permite que você se inscreva para receber notificações quando novos valores estiverem disponíveis, facilitando o trabalho com dados assíncronos e fluxos de eventos. No contexto do Angular, os Observables são frequentemente usados para lidar com operações assíncronas, como chamadas HTTP, eventos de interface do usuário e streams de dados em tempo real.
     const itensPorPagina: number = 6;
-
+    let filtroTratado: string | undefined = filtro?.trim() 
+  
+    
     let params = new HttpParams()
-      .set('_page', pagina)
-      .set('_limit', itensPorPagina);
+    .set('_page', pagina)
+    .set('_limit', itensPorPagina)
+    
+    
+    if(filtroTratado){
+      params = params.set('q', filtroTratado);
+    }
+
 
     return this.http.get<Pensamento[]>(this.API_URL, { params }); //retorna uma lista de pensamentos do backend
+  }
+
+  listarPensamentoFavoritos(pagina: number, filtro?: string): Observable<Pensamento[]>{
+    const itensPorPagina: number = 6;
+    let filtroTratado: string | undefined = filtro?.trim() 
+  
+    
+    let params = new HttpParams()
+    .set('_page', pagina)
+    .set('_limit', itensPorPagina)
+    .set('favorito', true);
+    
+    if(filtroTratado){
+      params = params.set('q', filtroTratado);
+    }
+
+    return this.http.get<Pensamento[]>(this.API_URL, {params})
+
+  }
+
+  mudarFavorito(pensamento: Pensamento): Observable<Pensamento>{
+    const url = `${this.API_URL}/${pensamento.id}`;
+    return this.http.patch<Pensamento>(url, { favorito: !pensamento.favorito});
   }
 
   criarPensamento(pensamento: Pensamento): Observable<Pensamento> {

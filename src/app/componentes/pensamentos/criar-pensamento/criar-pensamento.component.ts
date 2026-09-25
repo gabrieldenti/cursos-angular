@@ -20,7 +20,8 @@ export class CriarPensamentoComponent implements OnInit{
     this.formulario = this.formBuilder.group({
       conteudo: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/(.|\s)*\S(.|\s)*/)]],
       autoria: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/(.|\s)*\S(.|\s)*/)]],
-      modelo: ['', [Validators.required]]
+      modelo: ['', [Validators.required]],
+      favorito: [false]
     })
     console.log(this.formulario.value);
   }

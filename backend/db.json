@@ -1,40 +1,53 @@
 {
   "pensamentos": [
     {
-      "id": 1,
-      "conteudo": "O que me preocupa não é o grito dos maus. É o silêncio dos bons.",
-      "autoria": "Martin Luther King",
-      "modelo": "modelo1"
+      "id": 2,
+      "conteudo": "Na volta a gente compra!",
+      "autoria": "Mãe",
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": 4,
-      "conteudo": "Aprender Angular com a nova sintaxe de Control Flow torna o desenvolvimento muito mais limpo, eficiente e agradável de manter no dia a dia.",
-      "autoria": "Dev Frontend",
-      "modelo": "modelo1"
+      "conteudo": "Vc faz TI? Conserta meu celular!",
+      "autoria": "Grupo da família",
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": 5,
-      "conteudo": "Se vi mais longe foi por estar de pé sobre ombros de gigantes.",
-      "autoria": "Isaac Newton",
-      "modelo": "modelo2"
+      "conteudo": "Já tentou reiniciar o roteador?",
+      "autoria": "Pessoa da operadora",
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": 6,
-      "conteudo": "A persistência é o caminho do êxito. Cada erro no código é apenas um degrau no aprendizado para criar sistemas mais robustos.",
-      "autoria": "Charles Chaplin",
-      "modelo": "modelo3"
+      "conteudo": "Da vida reclama, mas sem ela não vive!",
+      "autoria": "Mestre Yoda",
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": 7,
-      "conteudo": "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado.",
-      "autoria": "Roberto Shinyashiki",
-      "modelo": "modelo1"
+      "conteudo": "Na minha máquina funciona!",
+      "autoria": "Dev",
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
-      "id": 8,
-      "conteudo": "Este é um texto de teste desenvolvido para preencher exatamente duzentos e cinquenta e seis caracteres no campo de conteúdo. O objetivo é validar o comportamento da interface quando um pensamento atinge o limite máximo de tamanho de tela estabelecido.",
-      "autoria": "Test Suite",
-      "modelo": "modelo2"
+      "id": 9,
+      "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
+      "autoria": "Chaves",
+      "modelo": "modelo1",
+      "favorito": false
+    },
+    {
+      "id": 13,
+      "conteudo": "Melhor professor, o fracasso é!",
+      "autoria": "Mestre Yoda",
+      "modelo": "modelo2",
+      "favorito": false
     }
   ]
 }

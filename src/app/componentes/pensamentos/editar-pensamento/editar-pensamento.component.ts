@@ -25,7 +25,8 @@ export class EditarPensamentoComponent implements OnInit {
         id: [pensamento.id],
         conteudo: [pensamento.conteudo, [Validators.required, Validators.minLength(3), Validators.pattern(/(.|\s)*\S(.|\s)*/)]],
         autoria: [pensamento.autoria, [Validators.required, Validators.minLength(3), Validators.pattern(/(.|\s)*\S(.|\s)*/)]],
-        modelo: [pensamento.modelo, [Validators.required]]
+        modelo: [pensamento.modelo, [Validators.required]],
+        favorito: [pensamento.favorito]
       })
     })
   }
