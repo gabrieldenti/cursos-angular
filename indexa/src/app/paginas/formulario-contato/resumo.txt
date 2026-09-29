@@ -1,0 +1,4 @@
+Interpolação ({{ valor }}): usa-se para exibir propriedades da classe do componente no template.
+Property Binding ([propriedade]="valor"): usa-se para vincular uma propriedade de um elemento HTML a uma propriedade da classe do componente.
+Event Binding ((evento)="handler()"): permite ouvir eventos do DOM e reagir a eles na classe do componente.
+Two-way Binding ([(ngModel)]="propriedade"): combina Property e Event Binding para criar uma via de mão dupla entre a classe e o template.

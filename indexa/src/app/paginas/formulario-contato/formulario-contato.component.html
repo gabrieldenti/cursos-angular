@@ -1,0 +1,79 @@
+<app-container>
+  <app-cabecalho [telaInicial]="false" [bannerSrc]="'/assets/adicionar-contato.png'" [titulo]="'Adicionar Contato'"></app-cabecalho>
+<!-- formControlName é uma diretiva do Angular que vincula o input ao controle de formulário correspondente -->
+ <!-- formGroup é uma diretiva do Angular que vincula o formulário ao grupo de controles correspondente -->
+  <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
+    <div role="button" class="imagem-contato">
+      <i class="material-icons">add</i>
+      <label for="avatar">Adicione a imagem do contato</label>
+      <input type="file" accept="image/*" id="avatar" required (change)="selecionarArquivo($event)">
+    </div>
+    @if(contatoForm.get('avatar')?.value !== ''){
+      <figure>
+        <img [src]="contatoForm.get('avatar')?.value" alt="Avatar do contato">
+      </figure>
+    }
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      name="nome"
+      id="nome"
+      placeholder="Digite o nome do contato"
+      formControlName="nome" 
+    />
+    <app-mensagem-erro [controle]="obterControle('telefone')"></app-mensagem-erro>
+    <label for="telefone">Número</label>
+    <input
+      type="tel"
+      name="telefone"
+      id="telefone"
+      placeholder="Digite o número de telefone"
+      formControlName="telefone"  
+    />
+    <app-mensagem-erro [controle]="obterControle('telefone')"></app-mensagem-erro>
+    <label for="email">E-mail</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Insira o endereço de e-mail do contato"
+      formControlName="email"
+    />
+    <app-mensagem-erro [controle]="obterControle('email')"></app-mensagem-erro>
+    <app-separador></app-separador>
+    <label for="aniversario">Aniversário</label>
+    <input
+      type="date"
+      name="aniversario"
+      id="aniversario"
+      placeholder="Selecione a data de aniversário"
+      formControlName="aniversario"
+    />
+
+    <label for="redes">Redes Sociais</label>
+    <div class="input-container">
+      <span class="span-http">http://</span>
+      <input
+        type="url"
+        name="redes"
+        id="redes"
+        placeholder="Adicione o URL da página"
+        formControlName="redes"
+      />
+    </div>
+
+    <label for="observacoes">Obersavações</label>
+    <textarea
+      type="text"
+      id="observacoes"
+      placeholder="Coloque obersavações nesse espaço. Exemplo:'Instrutora da academia'Nova Imagem', amiga da Júlia.'"
+      formControlName="observacoes"
+    ></textarea>
+
+    <section class="botoes">
+      <button (click)="cancelar()" class="botao-cancelar" type="button">Cancelar</button>
+      <button [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'" type="submit" [disabled]="!contatoForm.valid">Salvar
+      </button>
+    </section>
+  </form>
+</app-container>
