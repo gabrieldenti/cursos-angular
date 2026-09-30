@@ -19,13 +19,13 @@
         minlength="3"
         #nome="ngModel"
       />
-      <div *ngIf="nome?.invalid && f.controls['nome']?.touched">
+      <div *ngIf="nome?.invalid && nome.touched">
         <app-mensagem
-          *ngIf="f.controls['nome']?.errors?.['required']"
+          *ngIf="nome.errors?.['required']"
           mensagem="O campo nome deve ser preenchido"
         ></app-mensagem>
         <app-mensagem
-          *ngIf="f.controls['nome']?.errors?.['minlength']"
+          *ngIf="nome.errors?.['minlength']"
           mensagem="O campo nome deve ter no mínimo 3 caracteres"
         ></app-mensagem>
       </div>
