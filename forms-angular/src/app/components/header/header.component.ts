@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   telaCadastro(){
-    this.router.navigate(['cadastro'])
+    this.router.navigate(['/cadastro'])
   }
 
 }
