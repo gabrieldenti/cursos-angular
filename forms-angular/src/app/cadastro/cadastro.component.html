@@ -39,7 +39,20 @@
           type="date"
           class="campo__escrita"
           ngModel
+          required
+          #nascimento="ngModel"
+          appMaiorIdade
         />
+        <div *ngIf="nascimento?.invalid && nascimento.touched">
+          <app-mensagem
+            *ngIf="nascimento.errors?.['required']"
+            mensagem="Data de nascimento deve ser preenchida"
+          ></app-mensagem>
+          <app-mensagem
+            *ngIf="nascimento.errors?.['maiorIdade']"
+            mensagem="É necessário ter mais de 18 anos para se cadastrar"
+            ></app-mensagem>
+        </div>
       </div>
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="telefone">Contato</label>
@@ -52,22 +65,17 @@
           ngModel
           required
           pattern="(\(?\d{2}\)?\s?)(\d{5}\-?\d{4})"
+          #telefone="ngModel"
         />
-        <div
-          *ngIf="
-            f.controls['telefone']?.invalid && f.controls['telefone']?.touched
-          "
-        >
-          <span
-            class="erro__texto"
-            *ngIf="f.controls['telefone']?.errors?.['required']"
-            >O campo telefone deve ser preenchido</span
-          >
-          <span
-            class="erro__texto"
-            *ngIf="f.controls['telefone']?.errors?.['pattern']"
-            >Telefone inválido</span
-          >
+        <div *ngIf="telefone.invalid && telefone.touched">
+         <app-mensagem
+            *ngIf="telefone.errors?.['required']"
+            mensagem="O campo telefone deve ser preenchido"
+          ></app-mensagem>
+          <app-mensagem
+            *ngIf="telefone.errors?.['pattern']"
+            mensagem="Telefone inválido"
+          ></app-mensagem>
         </div>
       </div>
     </div>
@@ -81,16 +89,17 @@
         ngModel
         required
         email
+        #email="ngModel"
       />
-      <div *ngIf="f.controls['email']?.invalid && f.controls['email']?.touched">
-        <span
-          class="erro__texto"
-          *ngIf="f.controls['email']?.errors?.['required']"
-          >O campo email deve ser preenchido</span
-        >
-        <span class="erro__texto" *ngIf="f.controls['email']?.errors?.['email']"
-          >E-mail inválido</span
-        >
+      <div *ngIf="email.invalid && email.touched">
+        <app-mensagem
+          *ngIf="email.errors?.['required']"
+          mensagem="O campo e-mail deve ser preenchido"
+        ></app-mensagem>
+        <app-mensagem
+          *ngIf="email.errors?.['email']"
+          mensagem="E-mail inválido"
+        ></app-mensagem>
       </div>
     </div>
 
