@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Item } from './interfaces/iItem';
 import { ListaDeCompraService } from './service/lista-de-compra.service';
 
@@ -7,16 +7,23 @@ import { ListaDeCompraService } from './service/lista-de-compra.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, DoCheck {
   title = 'app-lista-de-compras';
   listaDeCompras: Item[] = []
   itemEditado! : Item;
+  itemExcluir!: Item;
 
   constructor(private listaDeCompraService: ListaDeCompraService  ) { }
+
+
+  ngDoCheck(): void { //Verifica quqlquer alteracao que ocorra no componente, escuta as classes filhas tambem
+    this.listaDeCompraService.atualizarLocalStorage()
+  }
 
   ngOnInit(): void {
     const lista = this.listaDeCompraService.getListaDeCompra();
     this.listaDeCompras = lista;
+    console.log(this.listaDeCompras);
   }
 
 
@@ -24,5 +31,8 @@ export class AppComponent implements OnInit {
     this.itemEditado = item;
   }
 
+  excluirItem(itemId: Item){
+    this.itemExcluir = itemId;
+  }
 
 }
