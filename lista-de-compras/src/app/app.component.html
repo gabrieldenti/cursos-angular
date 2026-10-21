@@ -7,7 +7,7 @@
       <div *ngIf="listaDeCompras.length !== 0 else naoTemItem">
         <div *ngFor="let item of listaDeCompras">
           <app-item [item]="item" (itemEditar)="editarItem($event)"
-          (itemExcluir)="excluirItem($event)"></app-item>
+          (itemDeletar)="excluirItem($event)"></app-item>
         </div>
       </div>
       <ng-template #naoTemItem>

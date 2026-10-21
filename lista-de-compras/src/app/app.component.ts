@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, DoCheck {
   title = 'app-lista-de-compras';
   listaDeCompras: Item[] = []
   itemEditado! : Item;
-  itemExcluir!: Item;
+  itemDeletar!: string;
 
   constructor(private listaDeCompraService: ListaDeCompraService  ) { }
 
@@ -31,8 +31,8 @@ export class AppComponent implements OnInit, DoCheck {
     this.itemEditado = item;
   }
 
-  excluirItem(itemId: Item){
-    this.itemExcluir = itemId;
+  excluirItem(itemId: string){
+    this.itemDeletar = itemId;
   }
 
 }
