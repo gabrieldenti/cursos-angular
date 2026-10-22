@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, DoCheck {
   constructor(private listaDeCompraService: ListaDeCompraService  ) { }
 
 
-  ngDoCheck(): void { //Verifica quqlquer alteracao que ocorra no componente, escuta as classes filhas tambem
+  ngDoCheck(): void { //Verifica quqlquer alteracao que ocorra no componente, escuta as classes filhas tambem.
     this.listaDeCompraService.atualizarLocalStorage()
   }
 
@@ -31,8 +31,15 @@ export class AppComponent implements OnInit, DoCheck {
     this.itemEditado = item;
   }
 
-  excluirItem(itemId: string){
-    this.itemDeletar = itemId;
+  excluirItem(itemId: Item['id']){
+    const index = this.listaDeCompras.findIndex((item) => item.id === itemId);
+    if (index !== -1) {
+      this.listaDeCompras.splice(index, 1);
+    }
+  }
+
+  limparLista(){
+    this.listaDeCompras = [];
   }
 
 }
