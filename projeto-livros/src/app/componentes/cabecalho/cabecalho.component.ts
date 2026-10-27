@@ -16,3 +16,7 @@ export class CabecalhoComponent {
     this.router.navigate([this.router.url])
   }
 }
+
+
+//componentes de apresentacao -> nao possui comportamento atribuido a ele
+//componentes container -> possui comportamento atribuido/informações e passa informações a outros componentes 
