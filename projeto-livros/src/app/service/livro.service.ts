@@ -13,14 +13,15 @@ private readonly URL_API = 'https://www.googleapis.com/books/v1/volumes'
   constructor(private http: HttpClient) { }
 
 
-  buscarLivros(valorDigitado: string): Observable<Item[]>{ //observable -> emite uma colecao de valores e eventos futuros
+  buscarLivros(valorDigitado: string): Observable<LivrosResultado>{ //observable -> emite uma colecao de valores e eventos futuros
     const params = new HttpParams().append('q', valorDigitado);
 
-    return this.http.get<LivrosResultado>(this.URL_API, {params}).pipe( 
-      tap(result => console.log(result)), //tap é usado para debug, sem modificar o fluxo. 
-      map(resultado => (resultado.items)) //Operador de transformação. Transforma o observable de acordo com a função passada. Retorna um observable modificado.
+    return this.http.get<LivrosResultado>(this.URL_API, {params})
+    // .pipe( 
+    //   tap(result => console.log(result)), //tap é usado para debug, sem modificar o fluxo. 
+    //   map(resultado => (resultado.items)) //Operador de transformação. Transforma o observable de acordo com a função passada. Retorna um observable modificado.
 
-    )
+    // )
   }
 }
 
